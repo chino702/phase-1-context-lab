@@ -79,14 +79,14 @@ describe("The payroll system", function () {
     })
 
     describe("createTimeInEvent", function () {
-      let bpRecord, updatedBpRecord, newEvent
-
       it("creates the correct type", function () {
-        let bpRecord = createEmployeeRecord(["Byron", "Poodle", "Mascot", 3])
-        let updatedBpRecord = createTimeInEvent.call(bpRecord, "2014-02-28 1400")
-        let newEvent = updatedBpRecord.timeInEvents[0]
+        const bpRecord = createEmployeeRecord(["Byron", "Poodle", "Mascot", 3])
+        const updatedBpRecord = createTimeInEvent.call(bpRecord, "2014-02-28 1400")
+        const newEvent = updatedBpRecord.timeInEvents[0]
         expect(newEvent.type).to.equal("TimeIn")
       })
+    })
+    
 
       it("extracts the correct date", function () {
         let bpRecord = createEmployeeRecord(["Byron", "Poodle", "Mascot", 3])
@@ -347,4 +347,3 @@ describe("The payroll system", function () {
       })
     })
   })
-})
